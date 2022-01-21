@@ -1,6 +1,6 @@
 import os.path
 from typing import Tuple, List
-from adapter.adapter import get_doc_id_and_document
+from adapter.adapter import get_doc_id_and_document, KnnAdapter, Doc
 from parsivar import Normalizer, Tokenizer, FindStems
 
 
@@ -36,6 +36,30 @@ class MyTokenizer:
             stop_word_list = file_p.readlines()
             stop_word_list = [stopword.replace("\n", "") for stopword in stop_word_list]
         return stop_word_list
+
+
+class KnnTokenizer(MyTokenizer):
+    def __init__(self):
+        super().__init__()
+        self.docs: List[Doc] = KnnAdapter().get_doc_id_and_documents()
+
+    def get_tokenized_stream(self) -> List[Tuple[List, Doc]]:
+        for doc in self.docs:
+            try:
+                normalized_document: str = Normalizer().normalize(doc.content)
+                token_words: List = Tokenizer().tokenize_words(normalized_document)
+                tokens = list()
+                for word_ in token_words:
+                    word = word_
+                    if self.stemming:
+                        word = self.stemer(word)
+                    if not self.stop_word and word in self.stop_words:
+                        pass
+                    else:
+                        tokens.append(word)
+                yield tokens, doc
+            except Exception as e:
+                print(e)
 
 
 get_token_stream = MyTokenizer().get_tokenized_stream()

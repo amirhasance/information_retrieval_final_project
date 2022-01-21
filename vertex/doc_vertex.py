@@ -16,12 +16,15 @@ class Vertex:
 
 class DocumentsVertex:
 
-    def __init__(self, index: dict, doc_vertex: dict = None):
+    def __init__(self, index: dict, doc_vertex: dict = None, doc_id_to_doc_title=None):
         self.inverted_index = index
         self.N = N
         self.doc_vertex = doc_vertex
         if self.doc_vertex is None:
             self.doc_vertex = dict()  # { key:doc_id , value: Vertex(doc_id)}
+        self.doc_id_to_doc_title = doc_id_to_doc_title
+        if doc_id_to_doc_title is None:
+            self.doc_id_to_doc_title = dict()
         self.term_idf_dict = dict()  # { term : idf log(N/nt) }
         self.term_to_termid = dict()
 
@@ -40,10 +43,11 @@ class DocumentsVertex:
 
     def calculate_term_weight_in_doc(self, term: str, doc_id):
         term_idf = self.term_idf_dict.get(term)
-        if term_idf is None:
-            tf = self.inverted_index.get(term).posting_list.__len__()
-            term_idf = math.log10(self.N / tf)
-            self.term_idf_dict[term] = term_idf
+        term_idf = 1
+        # if term_idf is None:
+        #     tf = self.inverted_index.get(term).posting_list.__len__()
+        #     term_idf = math.log10(self.N / tf)
+        #     self.term_idf_dict[term] = term_idf
         df_t = self.inverted_index.get(term).posting_list.get(doc_id).doc_frequency
         w = (1 + math.log10(df_t)) * (term_idf)
         if df_t:
@@ -91,8 +95,8 @@ class DocumentsVertex:
                 candid_documents.add(doc_id)
             term_idf = self.term_idf_dict.get(term)
             if term_idf is None:
-                tf = self.inverted_index.get(term).posting_list.__len__()
-                term_idf = math.log10(self.N / tf)
+                tn = self.inverted_index.get(term).posting_list.__len__()
+                term_idf = math.log10(self.N / tn)
                 self.term_idf_dict[term] = term_idf
             term_id = list(self.inverted_index.keys()).index(term)
             weight = (1 + math.log10(term_freq)) * term_idf

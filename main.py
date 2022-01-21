@@ -2,7 +2,7 @@ import pickle
 
 import parsivar
 
-from Index.positional.DocTerm import Term
+from my_index.positional.DocTerm import Term
 from my_tokenizer.m_tokenizer import get_token_stream
 with open("docid_to_doc_title", 'rb') as file_:
     doc_id_to_doc_title = pickle.load(file_)
