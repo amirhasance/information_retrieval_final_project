@@ -7,14 +7,14 @@ from pathlib import Path
 class Utils:
     @staticmethod
     def save_object_to_file(obj: Any, file_name: str):
-        file = os.path.join(Path(__file__).parent.parent, 'backup_files', file_name)
+        file_name = os.path.join(Path(__file__).parent.parent, 'backup_files', file_name)
         with open(file_name, 'wb') as file_:
             pickle.dump(obj, file_)
 
     @staticmethod
     def load_object_from_file(file_name: str) -> Any:
-        file = os.path.join(Path(__file__).parent.parent, 'backup_files', file_name)
-        with open(file, 'rb') as file_:
+        file_name = os.path.join(Path(__file__).parent.parent, 'backup_files', file_name)
+        with open(file_name, 'rb') as file_:
             data = pickle.load(file_)
         return data
 
