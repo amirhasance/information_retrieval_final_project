@@ -14,12 +14,6 @@ class DocumentsVertex:
         self.N = KnnAdapter().get_number_of_doc()
         self.doc_vertex = doc_vertex
         self.doc_vertex = Utils.load_object_from_file('knn_doc_vertex')
-
-        # if self.doc_vertex is None:
-        #     self.doc_vertex = dict()  # { key:doc_id , value: Vertex(doc_id)}
-        # self.doc_id_to_doc_title = doc_id_to_doc_title
-        # if doc_id_to_doc_title is None:
-        #     self.doc_id_to_doc_title = dict()
         self.term_idf_dict: Dict = Utils.load_object_from_file('knn_term_idf_dict')  # { term : idf log(N/nt) }
         self.doc_id_to_category: Dict = Utils.load_object_from_file('knn_doc_id_to_category')
         self.term_to_termid: Dict = Utils.load_object_from_file('knn_term_to_termid')

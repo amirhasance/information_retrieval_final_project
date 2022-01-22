@@ -26,7 +26,7 @@ class Index:
 class KnnIndex(Index):
     def __init__(self):
         super().__init__()
-        self.get_token_stream: Tuple[List, Doc] = KnnTokenizer().get_tokenized_stream()
+        self.get_token_stream: List[Tuple[List, Doc]] = KnnTokenizer().get_tokenized_stream()
 
     def create_index(self):
         for tokens, doc in self.get_token_stream:
@@ -34,10 +34,13 @@ class KnnIndex(Index):
                 if token not in self.inverted_index.keys():
                     self.inverted_index[token] = TermPostingList(token)
                 self.inverted_index[token].insert(doc_id=doc.doc_id)
-        Utils.save_object_to_file(self.inverted_index , 'knn_inverted_index')
+        Utils.save_object_to_file(self.inverted_index, 'knn_inverted_index')
 
 
 if __name__ == '__main__':
-    # KnnIndex().create_index()
-    a = Utils.load_object_from_file('knn_inverted_index')
+    # a = KnnIndex()
+    # a.create_index()
+    a = {"name" :"amir"}
+    Utils.save_object_to_file(a, 'knn_inverted_index')
+    # a = Utils.load_object_from_file('knn_inverted_index')
     print(a)
