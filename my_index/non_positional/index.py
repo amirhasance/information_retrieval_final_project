@@ -1,4 +1,4 @@
-from typing import Tuple, List
+from typing import Tuple, List, Dict
 
 from my_index.non_positional.DocTerm import TermPostingList
 from adapter.adapter import Doc
@@ -8,7 +8,7 @@ from utils.utils import Utils
 
 class Index:
     def __init__(self):
-        self.inverted_index = dict()  # dict { key = term , value = term_posting_list }
+        self.inverted_index: Dict[str:TermPostingList] = dict()  # dict { key = term , value = term_posting_list }
         self.docid_to_doc_title = dict()  # dict { key = doc_id , value = doc_title}
 
     def create_index(self):
@@ -38,9 +38,9 @@ class KnnIndex(Index):
 
 
 if __name__ == '__main__':
-    # a = KnnIndex()
-    # a.create_index()
-    a = {"name" :"amir"}
-    Utils.save_object_to_file(a, 'knn_inverted_index')
+    a = KnnIndex()
+    a.create_index()
+    # a = {"name" :"amir"}
+    Utils.save_object_to_file(a.inverted_index, 'knn_inverted_index')
     # a = Utils.load_object_from_file('knn_inverted_index')
     print(a)

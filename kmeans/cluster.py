@@ -8,7 +8,7 @@ from vertex.doc_vertex import Vertex
 
 class KmeanCluster:
 
-    def __init__(self, document_vertx=None, k: int = 5):
+    def __init__(self, document_vertx=None, k: int = 15):
         if document_vertx is None:
             self.document_vertx: Dict[int, Vertex] = self.get_document_vertex()
         self.k: int = k
@@ -106,7 +106,7 @@ class Cluster:
 
 
 if __name__ == '__main__':
-    a = KmeanCluster()
+    a = KmeanCluster(k=5)
     # a = Utils.load_object_from_file('a_kmeans')
     for i in range(5):
         a.reassgin()
