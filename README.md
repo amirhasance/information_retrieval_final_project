@@ -5,6 +5,7 @@
 the aim of the project is to implement a system of information retrival. i thank to Dr.Nick Abadi as the professor of this course .
 
 the project is done in 3 seperate phases .
+* the full project report is available in /images directory in this repository in persian .
 * in the first phase , i made an inverted index after preprocessing the documents .
 Preprocessing includes normalizing the document , tokenizing ,stemming , removing stop words . 
 after these steps , the tokens were prepared to crate the inverted index . 
