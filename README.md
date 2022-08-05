@@ -30,3 +30,7 @@ most similar document to that query . the result was shown in the ranking sort .
 <p align="center">
   <img src="images/ph2_query_response2.png" width="700" title="hover text">
 </p>
+* in the last phase , the number of documents became multiple . since the perform of Cosin similarity 
+of query to each document would take a significant time , so we have to change our approach while handling query and we were using 
+KNN and K-means algorithms to find the most like documents to queries . the number of documents were about 
+100K .
