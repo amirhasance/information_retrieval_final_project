@@ -1,11 +1,11 @@
 # <p align="center">Informations Retrieval Project (Search Engine)</p>
 
 # Table of Contents
-- [Introduction](https://github.com/mohammadtavakoli78/Informations-Retrieval#introduction)
-- [First_Phase](https://github.com/mohammadtavakoli78/Informations-Retrieval#-First_Phase)
-- [Second_Phase](https://github.com/mohammadtavakoli78/Informations-Retrieval#-Second_Phase)
-- [Third_Phase](https://github.com/mohammadtavakoli78/Informations-Retrieval#-Third_Phase)
-- [Technologies](https://github.com/mohammadtavakoli78/Informations-Retrieval#technologies)
+- [Introduction](https://github.com/amirhasance/information_retrieval_final_project#introduction)
+- [First_Phase](https://github.com/amirhasance/information_retrieval_final_project#-First_Phase)
+- [Second_Phase](https://github.com/amirhasance/information_retrieval_final_project#-Second_Phase)
+- [Third_Phase](https://github.com/amirhasance/information_retrieval_final_project#-Third_Phase)
+- [Technologies](https://github.com/amirhasance/information_retrieval_final_project#technologies)
 
 ## Introduction
 In this project i implement a search engine using various algorithms like: ```tf-idf```, ```Word Embedding```, ```Inverted Index``` and also in phase three i use ```KNN``` and ```K-means``` for clustering and classifying that leads to boost speed of retrieving documents.<br>
@@ -22,25 +22,21 @@ Sample of output:
 In the second phase, we have got to use ```tf-idf approach```. Our documents we represented in the vector it means for each word in the document, we calculated the weight of that word (except stoping words ...) when we face to a user query, we build the query vector and caculate the ```Cosin similarity``` to find the most similar document to that query. The result was shown in the ranking sort from the most similar to the least one.
 
 Sample of output:
-![](https://github.com/mohammadtavakoli78/Informations-Retrieval/blob/master/Phase%202/image/3.PNG)<br>
-![](https://github.com/mohammadtavakoli78/Informations-Retrieval/blob/master/Phase%202/image/4.PNG)<br>
-![](https://github.com/mohammadtavakoli78/Informations-Retrieval/blob/master/Phase%202/5/1-1.PNG)<br>
-![](https://github.com/mohammadtavakoli78/Informations-Retrieval/blob/master/Phase%202/5/2-1.PNG)<br>
-![](https://github.com/mohammadtavakoli78/Informations-Retrieval/blob/master/Phase%202/5/3-1.PNG)<br>
-![](https://github.com/mohammadtavakoli78/Informations-Retrieval/blob/master/Phase%202/5/4-1.PNG)<br>
+![](https://github.com/amirhasance/information_retrieval_final_project/tree/master/images/image-2/image/3.PNG)<br>
+![](https://github.com/amirhasance/information_retrieval_final_project/tree/master/images/image-2/image/4.PNG)<br>
 
 ## 💻 Third_Phase
 In the last phase, the number of documents became multiple. since the perform of Cosin similarity of query to each document would take a significant time, so we have to change our approach while handling query and we were using ```KNN``` and ```K-means``` algorithms to find the most like documents to queries. the number of documents were about 50K.<br>
 
 Sample of output:
-![](https://github.com/mohammadtavakoli78/Informations-Retrieval/blob/master/Phase%203/Images/1-1-1.PNG)<br>
-![](https://github.com/mohammadtavakoli78/Informations-Retrieval/blob/master/Phase%203/Images/1-2-1.PNG)<br>
-![](https://github.com/mohammadtavakoli78/Informations-Retrieval/blob/master/Phase%203/Images/1-3-1.PNG)<br>
-![](https://github.com/mohammadtavakoli78/Informations-Retrieval/blob/master/Phase%203/Images/2-1-1.PNG)<br>
-![](https://github.com/mohammadtavakoli78/Informations-Retrieval/blob/master/Phase%203/Images/2-2-1.PNG)<br>
-![](https://github.com/mohammadtavakoli78/Informations-Retrieval/blob/master/Phase%203/Images/2-3-1.PNG)<br>
-![](https://github.com/mohammadtavakoli78/Informations-Retrieval/blob/master/Phase%203/Images/2-4-1.PNG)<br>
-![](https://github.com/mohammadtavakoli78/Informations-Retrieval/blob/master/Phase%203/Images/2-5-1.PNG)<br>
+![](https://github.com/amirhasance/information_retrieval_final_project/tree/master/images/Image-3/1-1-1.PNG)<br>
+![](https://github.com/amirhasance/information_retrieval_final_project/tree/master/images/Image-3/1-2-1.PNG)<br>
+![](https://github.com/amirhasance/information_retrieval_final_project/tree/master/images/Image-3/1-3-1.PNG)<br>
+![](https://github.com/amirhasance/information_retrieval_final_project/tree/master/images/Image-3/2-1-1.PNG)<br>
+![](https://github.com/amirhasance/information_retrieval_final_project/tree/master/images/Image-3/2-2-1.PNG)<br>
+![](https://github.com/amirhasance/information_retrieval_final_project/tree/master/images/Image-3/2-3-1.PNG)<br>
+![](https://github.com/amirhasance/information_retrieval_final_project/tree/master/images/Image-3/2-4-1.PNG)<br>
+![](https://github.com/amirhasance/information_retrieval_final_project/tree/master/images/Image-3/2-5-1.PNG)<br>
 
 ## Technologies
 Project is created with:
