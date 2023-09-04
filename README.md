@@ -15,8 +15,8 @@ I used two different dataset, The first one has more than 7k news and the second
 In this phase, i made an inverted index after ```preprocessing``` the documents. Preprocessing includes ```normalizing``` the document, ```tokenizing```, ```stemming```, ```removing stop words```. After these steps, the tokens were prepared to crate the ```inverted index```. Inverted index has the information of each term is appeard in what document and its positions in a certain one. Now it was time to answer the queries of the user. This approach was based on the order of words in the queries. If this order is found in a document, It is considered as a candidate answer preprocessing step.<br>
 
 Sample of output:
-![](https://github.com/mohammadtavakoli78/Informations-Retrieval/blob/master/Phase%202/image/1.PNG)<br>
-![](https://github.com/mohammadtavakoli78/Informations-Retrieval/blob/master/Phase%202/image/2.PNG)<br>
+![](https://github.com/amirhasance/information_retrieval_final_project/blob/master/images/image-2/1.PNG)<br>
+![](https://github.com/amirhasance/information_retrieval_final_project/blob/master/images/image-2/2.PNG)<br>
 
 ## 💻 Second_Phase
 In the second phase, we have got to use ```tf-idf approach```. Our documents we represented in the vector it means for each word in the document, we calculated the weight of that word (except stoping words ...) when we face to a user query, we build the query vector and caculate the ```Cosin similarity``` to find the most similar document to that query. The result was shown in the ranking sort from the most similar to the least one.
